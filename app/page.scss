@@ -1,0 +1,258 @@
+.side-nav{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-image: url(../public/milky-way.jpeg);
+    border: 2px solid #201bcf;
+    background-color: #66826c;
+  }
+  .side-nav-ul{
+    li{
+      padding: 10px 0;
+      font-size: 28px;
+    }
+  }
+
+  #profile{
+    padding: 50px 0;
+      display: flex;
+      font-size: 50px;
+      justify-content: center;
+      background-image: url(../public/laptop.webp);
+      background-size: cover;
+      height: 100vh;
+  
+      h2{
+        display: flex;
+        align-items: center;
+        color: #080a03;
+  }     
+  }
+  .work, #skills, #education, #about{
+    h2{
+    color: #49cdff;
+    font-size: 40px;
+    margin-top: 25px;
+  }
+  }
+
+  #skills{
+    h2{
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  }
+.work{
+    &-role{
+      margin-top: 15px;
+    color: #41e185;
+    font-size: 35px;
+    }
+    &-com{
+    color: #080a03;
+    font-size: 20px;
+    font-weight: bold;
+    // margin-bottom: 30px;
+    }
+}
+
+a{
+  text-decoration: underline;
+  color: #201bcf;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  background-color: #f0f0f0; // Background color of the skill bar
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-percentage {
+  background-color: #4caf50; // Color of the filled bar, change as needed
+  color: white;
+  text-align: right;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+
+.education-section {
+  padding: 50px 0;
+  // max-width: 600px;
+  // margin: 0 auto; // Center the section on the page
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.accordion-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: background-color 0.3s;
+
+  &.open {
+    background-color: #383434;
+  }
+
+  &:hover {
+    background-color: #153317;
+  }
+}
+
+.accordion-content {
+  padding: 10px 20px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  margin-top: 10px;
+  animation: slideDown 0.3s ease-in-out;
+
+  .college-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .education-years {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.education-section {
+  .accordion-item {
+    .accordion-title {
+      position: relative;
+      cursor: pointer;
+      padding-right: 20px; // Make space for the icon
+
+      &::after {
+        content: "▼"; // Down arrow by default
+        position: absolute;
+        right: 0;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &.open::after {
+        content: "▲"; // Change to up arrow when open
+      }
+    }
+
+    & + & {
+      margin-top: 10px; // Space between accordion items
+    }
+  }
+}
+
+
+
+.about-section {
+  padding: 50px 0;
+  position: relative;
+  align-items: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    // color: #333;
+  }
+
+  p {
+    font-size: 1rem;
+    // color: #555;
+    margin: 0.5rem 0;
+
+    strong {
+      color: #000;
+    }
+  }
+
+  .download-cv {
+    // display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff; // You can change the background color as needed
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    // position: absolute;
+    // right: 0;
+    // bottom: 0;
+    transform: translateY(50%);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3; // Change the hover color as needed
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #profile{
+    font-size: 25px;
+    background: none;
+    margin-top: 40px;
+    h2{
+      color: #96c423;
+      height: inherit;
+    }
+  }
+  .side-nav{
+    width: 100% !important;
+    height: auto;
+    z-index: 2;
+  &-ul{
+    gap: 10px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-bottom: 20px;
+  }
+  }
+.about-section {
+  align-items: baseline;
+}
+
+
+}
